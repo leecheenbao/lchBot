@@ -37,24 +37,21 @@ public class MessageController {
 
     @Autowired
     private LineMessagingClient lineMessagingClient;
-    @Value("${keelung.food.url}")
+    @Value("${keelung.restaurants.url}")
     private String foodAPI;
-    @Value("{keelung.room.url}")
-    private String roomAPI;
+    @Value("{keelung.accommodations.url}")
+    private String accommodationsAPI;
     @Value("{keelung.attractions.url")
-    private String viewAPI;
+    private String attractionsAPI;
 
     @EventMapping
     public void handleTextMessage(MessageEvent<TextMessageContent> event) throws JsonProcessingException {
-        log.info(event.toString());
         TextMessageContent message = event.getMessage();
-        System.out.println("我在這邊");
         handleTextContent(event.getReplyToken(), event, message );
     }
 
     @EventMapping
     public void handleStickerMessage(MessageEvent<StickerMessageContent> event) {
-        log.info(event.toString());
         StickerMessageContent message = event.getMessage();
         reply(event.getReplyToken(), new StickerMessage(
                 message.getPackageId(), message.getStickerId()

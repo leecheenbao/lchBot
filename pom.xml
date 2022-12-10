@@ -113,6 +113,16 @@
 			<artifactId>guava</artifactId>
 			<version>31.1-jre</version>
 		</dependency>
+		<dependency>
+			<groupId>com.suyeer</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>3.2.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-extension</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
 	</dependencies>
 

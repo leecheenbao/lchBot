@@ -31,17 +31,15 @@ public class LinebotApplication {
 			protocol = "https";
 		}
 		log.info("\n----------------------------------------------------------\n\t" +
-						"Application '{}' is running! Access URLs:\n\t" +
+						"Application is running! Access URLs:\n\t" +
 						"Local: \t\t{}://localhost:{}\n\t" +
-						"External: \t{}://{}:{}\n\t" +
-						"Profile(s): \t{}\n----------------------------------------------------------",
-				env.getProperty("spring.application.name"),
+						"External: \t{}://{}:{}\n" +
+						"----------------------------------------------------------",
 				protocol,
 				env.getProperty("server.port"),
 				protocol,
 				InetAddress.getLocalHost().getHostAddress(),
-				env.getProperty("server.port"),
-				env.getActiveProfiles());
+				env.getProperty("server.port"));
 
 	}
 
